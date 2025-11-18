@@ -1,18 +1,19 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from '../screens/Home';
-import ProfileScreen from '../screens/Profile';
-import About from '../screens/About';
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// import HomeScreen from '../components/(tabs)/Home';
+// import ProfileScreen from '../screens/Profile';
+// import About from '../screens/About';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import TabNavigator from './TabNavigator';
 
-const Stack = createNativeStackNavigator();
+// const Stack = createNativeStackNavigator();
 
 export default function MainNavigator() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Stack.Navigator
+        {/* <Stack.Navigator
           // screenOptions={{ headerShown: false }}
           initialRouteName="Home"
         >
@@ -31,7 +32,9 @@ export default function MainNavigator() {
             component={About}
             options={{ title: 'About Page' }}
           />
-        </Stack.Navigator>
+        </Stack.Navigator> */}
+
+        <TabNavigator />
       </NavigationContainer>
     </SafeAreaProvider>
   );
