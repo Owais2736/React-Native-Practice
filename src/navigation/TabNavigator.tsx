@@ -2,6 +2,8 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../components/(tabs)/Home';
 import Settings from '../components/(tabs)/Setting';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faGear, faListCheck } from '@fortawesome/free-solid-svg-icons';
 
 const Tab = createBottomTabNavigator();
 
@@ -9,7 +11,7 @@ export default function TabNavigator() {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarActiveTintColor: 'red',
+        tabBarActiveTintColor: 'blue',
         tabBarInactiveTintColor: 'gray',
         tabBarStyle: {
           backgroundColor: '#1E1E1E',
@@ -27,12 +29,22 @@ export default function TabNavigator() {
       <Tab.Screen
         name="Todos"
         component={HomeScreen}
-        options={{ title: 'Todos' }}
+        options={{
+          title: 'Todos',
+          tabBarIcon: ({ color }) => (
+            <FontAwesomeIcon icon={faListCheck} color={color} size={20} />
+          ),
+        }}
       />
       <Tab.Screen
         name="Settings"
         component={Settings}
-        options={{ title: 'Settings' }}
+        options={{
+          title: 'Settings',
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesomeIcon icon={faGear} color={color} size={20} />
+          ),
+        }}
       />
     </Tab.Navigator>
   );
