@@ -3,7 +3,12 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../components/(tabs)/Home';
 import Settings from '../components/(tabs)/Setting';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faGear, faListCheck } from '@fortawesome/free-solid-svg-icons';
+import {
+  faGear,
+  faHashtag,
+  faListCheck,
+} from '@fortawesome/free-solid-svg-icons';
+import Counter from '../components/(tabs)/Counter';
 
 const Tab = createBottomTabNavigator();
 
@@ -43,6 +48,16 @@ export default function TabNavigator() {
           title: 'Settings',
           tabBarIcon: ({ color, size }) => (
             <FontAwesomeIcon icon={faGear} color={color} size={20} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Counter"
+        component={Counter}
+        options={{
+          title: 'Counter',
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesomeIcon icon={faHashtag} color={color} size={20} />
           ),
         }}
       />
