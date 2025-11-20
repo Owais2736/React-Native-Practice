@@ -6,9 +6,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import {
   faGear,
   faHashtag,
+  faInfoCircle,
   faListCheck,
+  faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import Counter from '../components/(tabs)/Counter';
+import About from '../screens/About.tsx';
+import ProfileScreen from '../screens/Profile.tsx';
 
 const Tab = createBottomTabNavigator();
 
@@ -58,6 +62,29 @@ export default function TabNavigator() {
           title: 'Counter',
           tabBarIcon: ({ color, size }) => (
             <FontAwesomeIcon icon={faHashtag} color={color} size={20} />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="About"
+        component={About}
+        options={{
+          title: 'About',
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesomeIcon icon={faInfoCircle} color={color} size={20} />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        initialParams={{ name: 'Owais Ali' }}
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color }) => (
+            <FontAwesomeIcon icon={faUser} color={color} size={20} />
           ),
         }}
       />
