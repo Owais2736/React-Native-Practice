@@ -13,7 +13,7 @@ export default function About({ navigation }: any) {
 
       <Pressable
         style={styles.button}
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigation.navigate('Todos')}
       >
         <Text style={styles.buttonText}>Go back to Home</Text>
       </Pressable>
@@ -27,9 +27,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
+    backgroundColor: '#121212',
   },
-  heading: { fontSize: 24, fontWeight: 'bold', marginBottom: 20 },
-  text: { fontSize: 16, textAlign: 'center', marginBottom: 20 },
+  heading: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+    color: 'white',
+  },
+  text: { fontSize: 16, textAlign: 'center', marginBottom: 20, color: 'white' },
   button: { backgroundColor: 'blue', padding: 10, borderRadius: 5 },
   buttonText: { color: 'white', fontSize: 16 },
 });
